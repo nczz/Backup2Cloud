@@ -2,19 +2,19 @@
 dbusername='DBUSERNAME'
 dbpassword='DBPASSWORD'
 hostname='localhost'
-backupfolderpath="`pwd`/backup"
+backupfolderpath="CURRENT_PATH/backup"
 days=7 # 7D period
 today=`date +%F-%H-%M-%S`
 wwwpath="/PATH/TO/WWW"
 rclone_path="remote:bucketname"
-RCLONE_CONFIG="`pwd`/rclone.conf" #DO NOT CHANGE IT IF YOU DO NOT KNOW IT
+RCLONE_CONFIG="CURRENT_PATH/rclone.conf" #DO NOT CHANGE IT IF YOU DO NOT KNOW IT
 export RCLONE_CONFIG
 
 read -a dbs <<< `mysql -u $dbusername -p$dbpassword -h $hostname --silent -N -e 'show databases'`
 read -a wwwfs <<< `ls $wwwpath`
 
-rdbl=( $( cat `pwd`/db_ignore.txt ) )
-rfsl=( $( cat `pwd`/www_ignore.txt ) )
+rdbl=( $( cat CURRENT_PATH/db_ignore.txt ) )
+rfsl=( $( cat CURRENT_PATH/www_ignore.txt ) )
 
 for rd in "${rdbl[@]}"; do
   for i in "${!dbs[@]}"; do

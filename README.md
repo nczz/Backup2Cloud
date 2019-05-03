@@ -17,7 +17,9 @@
 
 2. 複製本專案至備份裝置，設定各項設定檔案
 
+	- current_dir=`pwd` && sed -i 's|CURRENT_PATH|'$current_dir'|g' Backup2Cloud.sh
 	- `Backup2Cloud.sh` 設定備份天數、備份網站與資料庫資訊、異地備份位置（以 [AWS S3](https://rclone.org/s3/) 為例）。
+	- `rclone.conf` 設定 rclone 參數。
 	- `db_ignore.txt` 設定不要備份的資料庫，一行一個。
 	- `www_ignore.txt` 設定不要備份的網站目錄，一行一個。
 
