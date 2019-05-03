@@ -1,6 +1,6 @@
 # Backup2Cloud
 
-新版本備份工具，使用 [rclone](https://github.com/ncw/rclone) 來處理備份雲端的部分。備份方式與邏輯與前一版本 [VPSBackupToS3](https://github.com/nczz/VPSBackupToS3) 最大的差異就是抽離備份目的地設定，和 `s3cmd` 工具解構與使用純 `bash` script 改寫。
+新版本備份工具，使用 [rclone](https://github.com/ncw/rclone) 來處理備份雲端的部分。備份邏輯與前一版本 [VPSBackupToS3](https://github.com/nczz/VPSBackupToS3) 最大的差異就是抽離備份目的地設定，和 `s3cmd` 工具解構與使用純 `bash` script 改寫。
 
 ### 相依套件
 
