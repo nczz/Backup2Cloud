@@ -1,0 +1,13 @@
+backup/www/*
+backup/mysql/*
+!backup/www/README.md
+!backup/mysql/README.md
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+npm-debug.log
+# Icon must end with two \r
+Icon
+# Thumbnails
+._*
