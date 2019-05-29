@@ -10,8 +10,12 @@ rclone_path="remote:bucketname"
 RCLONE_CONFIG="CURRENT_PATH/rclone.conf" #DO NOT CHANGE IT IF YOU DO NOT KNOW IT
 export RCLONE_CONFIG
 
-read -a dbs <<< `mysql -u $dbusername -p$dbpassword -h $hostname --silent -N -e 'show databases'`
-read -a wwwfs <<< `ls $wwwpath`
+#read -a dbs <<< `mysql -u $dbusername -p$dbpassword -h $hostname --silent -N -e 'show databases'`
+mysql -u $dbusername -p$dbpassword -h $hostname --silent -N -e 'show databases' > CURRENT_PATH/current_dbs.txt
+dbs=( $( cat CURRENT_PATH/current_dbs.txt ) )
+#read -a wwwfs <<< `ls $wwwpath`
+ls $wwwpath > CURRENT_PATH/current_wwwfs.txt
+wwwfs=( $( cat CURRENT_PATH/current_wwwfs.txt ) )
 
 rdbl=( $( cat CURRENT_PATH/db_ignore.txt ) )
 rfsl=( $( cat CURRENT_PATH/www_ignore.txt ) )

@@ -18,8 +18,7 @@
 2. 複製本專案至備份裝置，設定各項設定檔案
 
 	```bash
-	git clone https://github.com/nczz/Backup2Cloud.git && cd Backup2Cloud
-	current_dir=`pwd` && sed -i 's|CURRENT_PATH|'$current_dir'|g' Backup2Cloud.sh
+	git clone https://github.com/nczz/Backup2Cloud.git && cd Backup2Cloud && current_dir=`pwd` && sed -i 's|CURRENT_PATH|'$current_dir'|g' Backup2Cloud.sh
 	```
 	
 	- `Backup2Cloud.sh` 設定備份天數、備份網站與資料庫資訊、異地備份位置（以 [AWS S3](https://rclone.org/s3/) 為例）。
