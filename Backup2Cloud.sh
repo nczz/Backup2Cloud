@@ -70,7 +70,7 @@ do
 	if [ "$pass" -eq 0 ]; then
 		filename="$backupfolderpath/www/$today-$www.tar.bz2"
 		echo "Backing Up $wwwpath/$www to $filename now!"
-		tar JcpfP $filename $wwwpath/$www --warning=no-file-changed
+		tar jcvf $filename $wwwpath/$www --warning=no-file-changed
 		echo ".. done"
 	fi
 done
