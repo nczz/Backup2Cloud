@@ -39,8 +39,10 @@ done
 #echo "DB LIST: ${dbs[@]}"
 #echo "WWW LIST: ${wwwfs[@]}"
 
-find $backupfolderpath/mysql/ -mindepth 1 -mtime +$days -name "*.gz" -delete
-find $backupfolderpath/www/ -mindepth 1 -mtime +$days -name "*.bz2" -delete
+#find $backupfolderpath/mysql/ -mindepth 1 -mtime +$days -name "*.gz" -delete
+#find $backupfolderpath/www/ -mindepth 1 -mtime +$days -name "*.bz2" -delete
+find $backupfolderpath/mysql/ -type f -name "*.sql.gz" -mtime +${days} -delete
+find $backupfolderpath/www/ -type f -name "*.tar.bz2" -mtime +${days} -delete
 #remove today's backup
 rm $backupfolderpath/mysql/`date +%F`*.gz
 rm $backupfolderpath/www/`date +%F`*.bz2
